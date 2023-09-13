@@ -1,0 +1,7 @@
+### GET Employees
+GET http://localhost:4004/service/demo/Employees
+Authorization: Basic bob:password
+
+### GET Employees
+GET http://localhost:4004/service/demo/Employees
+Authorization: Basic fakebob:password
