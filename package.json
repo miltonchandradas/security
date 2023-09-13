@@ -13,9 +13,11 @@
     "passport": "^0.6.0"
   },
   "devDependencies": {
+    "@sap/ux-specification": "^1.108.13",
     "sqlite3": "^5"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
   }
 }
