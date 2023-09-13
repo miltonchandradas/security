@@ -1,1 +1,52 @@
-{}
+{
+  "auth": {
+    "kind": "basic-auth",
+    "passport": {
+      "strategy": "mock",
+      "users": {
+        "alice": {
+          "tenant": "t1",
+          "roles": ["cds.Subscriber", "admin"],
+          "attributes": {
+            "email": "alice@sap.com"
+          }
+        },
+        "bob": {
+          "tenant": "t1",
+          "roles": ["cds.ExtensionDeveloper", "cds.UIFlexDeveloper"],
+          "attributes": {
+            "email": "bob@sap.com"
+          }
+        },
+        "carol": {
+          "tenant": "t1",
+          "roles": [
+            "cds.Subscriber",
+            "admin",
+            "cds.ExtensionDeveloper",
+            "cds.UIFlexDeveloper"
+          ]
+        },
+        "dave": {
+          "tenant": "t1",
+          "roles": ["cds.Subscriber", "admin"],
+          "features": []
+        },
+        "erin": {
+          "tenant": "t2",
+          "roles": [
+            "cds.Subscriber",
+            "admin",
+            "cds.ExtensionDeveloper",
+            "cds.UIFlexDeveloper"
+          ]
+        },
+        "fred": { "tenant": "t2", "features": ["isbn"] },
+        "me": { "tenant": "t1", "features": ["*"] },
+        "yves": { "roles": ["internal-user"] },
+        "*": false
+      },
+      "tenants": { "t1": { "features": ["isbn"] }, "t2": { "features": "*" } }
+    }
+  }
+}
