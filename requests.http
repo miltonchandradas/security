@@ -9,3 +9,11 @@ Authorization: Basic alice:password
 ### GET Employees
 GET http://localhost:4004/service/demo/Employees
 Authorization: Basic fakebob:password
+
+### GET metadata
+GET http://localhost:4004/service/demo/$metadata
+Authorization: Basic fakebob:password
+
+### GET metadata
+GET http://localhost:4004/service/demo/$metadata
+Authorization: Basic bob:password
