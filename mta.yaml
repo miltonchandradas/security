@@ -99,6 +99,8 @@ modules:
         - .env
         - "*node_modules*"
         - package-lock.json
+    properties:
+      ENVIRONMENT: production
     provides:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
