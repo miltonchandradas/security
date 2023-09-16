@@ -11,9 +11,11 @@ module.exports = async (srv) => {
     } else if (process.env.ENVIRONMENT === "production") {
       // TODO: Read values from JWT token and store in headers...
       let jwt = req.headers.authorization;
-      console.log("JWT Token: ", jwt);
+      // console.log("JWT Token: ", jwt);
       let jwtDecoded = jwtDecode(jwt);
-      console.log("Decoded JWT Token: ", jwtDecoded);
+      // console.log("Decoded JWT Token: ", jwtDecoded);
+      req.headers["id"] = jwtDecoded.user_name;
+      req.headers["email"] = jwtDecoded.email;
     }
   });
 
