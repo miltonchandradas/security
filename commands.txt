@@ -1,1 +1,13 @@
 cds env get requires.auth
+
+DEPLOY TO CLOUD FOUNDRY
+----------------------------------------------------------------------------------------
+cds add hana --for production
+cds add xsuaa --for production
+cds add mta
+npm update --package-lock-only
+
+
+cf login -a https://api.cf.us10.hana.ondemand.com
+mbt build
+cf deploy mta_archives/security_1.0.0.mtar

@@ -8,9 +8,10 @@
   "dependencies": {
     "@sap/cds": "^6",
     "@sap/xsenv": "^4.0.0",
-    "@sap/xssec": "^3.3.4",
+    "@sap/xssec": "^3",
     "express": "^4",
-    "passport": "^0.6.0"
+    "passport": "^0",
+    "hdb": "^0.19.0"
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.108.13",
@@ -19,5 +20,14 @@
   "scripts": {
     "start": "cds-serve",
     "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "db": "hana-cloud",
+        "auth": "xsuaa"
+      },
+      "db": "sql"
+    }
   }
 }
