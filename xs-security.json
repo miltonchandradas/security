@@ -2,18 +2,28 @@
   "scopes": [
     {
       "name": "$XSAPPNAME.admin",
-      "description": "admin"
+      "description": "Admin scope for Security demo app"
     }
   ],
   "attributes": [],
   "role-templates": [
     {
       "name": "admin",
-      "description": "generated",
+      "description": "Admin role template for Security demo app",
       "scope-references": [
         "$XSAPPNAME.admin"
       ],
       "attribute-references": []
     }
-  ]
+  ],
+  "oauth2-configuration": {
+    "token-validity": 3600,
+    "redirect-uris": [
+      "http://localhost:5000/**",
+      "http://localhost:4004/**",
+      "https://*.*.applicationstudio.cloud.sap/**",
+      "https://*.cfapps.*.hana.ondemand.com/**",
+      "https://*.authentication.*.hana.ondemand.com/**"
+    ]
+  }
 }

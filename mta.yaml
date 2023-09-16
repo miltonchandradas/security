@@ -17,6 +17,11 @@ modules:
       buildpack: nodejs_buildpack
     build-parameters:
       builder: npm-ci
+      ignore:
+        - default-*.json
+        - .env
+        - "*node_modules*"
+        - package-lock.json
     provides:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
@@ -30,6 +35,12 @@ modules:
     path: gen/db
     parameters:
       buildpack: nodejs_buildpack
+    build-parameters:
+      ignore:
+        - default-*.json
+        - .env
+        - "*node_modules*"
+        - package-lock.json
     requires:
       - name: security-db
 
@@ -48,3 +59,8 @@ resources:
       config:
         xsappname: security-${org}-${space}
         tenant-mode: dedicated
+        role-collections:
+        - name: 'DemoSecurityAdminRoleCollection-${space}'
+          description: Admin role collection for Security demo app
+          role-template-references:
+          - $XSAPPNAME.admin
